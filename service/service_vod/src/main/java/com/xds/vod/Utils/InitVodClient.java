@@ -1,0 +1,21 @@
+package com.xds.vod.Utils;
+
+import com.aliyun.oss.ClientException;
+import com.aliyuncs.DefaultAcsClient;
+import com.aliyuncs.profile.DefaultProfile;
+import org.springframework.stereotype.Component;
+
+/**
+ * @Author Bai Xu
+ * @Date 2021/9/6 13:43
+ * @Version 1.0
+ */
+@Component
+public class InitVodClient {
+    public static DefaultAcsClient initVodClient(String accessKeyId, String accessKeySecret) throws ClientException {
+        String regionId = "cn-shanghai";  // 点播服务接入区域
+        DefaultProfile profile = DefaultProfile.getProfile(regionId, accessKeyId, accessKeySecret);
+        DefaultAcsClient client = new DefaultAcsClient(profile);
+        return client;
+    }
+}
