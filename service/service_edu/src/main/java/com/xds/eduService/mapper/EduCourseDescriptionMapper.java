@@ -2,6 +2,7 @@ package com.xds.eduService.mapper;
 
 import com.xds.eduService.entity.EduCourseDescription;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -11,6 +12,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author testjava
  * @since 2021-08-29
  */
+
 public interface EduCourseDescriptionMapper extends BaseMapper<EduCourseDescription> {
 
 }

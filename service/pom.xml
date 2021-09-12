@@ -31,16 +31,23 @@
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
         </dependency>-->
 
-
-       <!--  <dependency>
+<!--        pringCloud新版本中不再使用Netflix中的ribbon，而是使用loadbalancer
+，因此不导入loadbalancer将会报错，并排除nacos中自带引入的ribbon-->
+        <dependency>
              <groupId>org.springframework.cloud</groupId>
              <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-         </dependency>-->
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+                </exclusion>
+            </exclusions>
+         </dependency>
 
-       <!--  <dependency>
+         <dependency>
              <groupId>org.springframework.cloud</groupId>
              <artifactId>spring-cloud-starter-openfeign</artifactId>
-         </dependency>-->
+         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -119,6 +126,11 @@
             <artifactId>common_utils</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+            <version>2.2.0.RELEASE</version>
+        </dependency>
     </dependencies>
 
     <build>

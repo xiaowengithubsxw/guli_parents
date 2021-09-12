@@ -3,6 +3,7 @@ package com.xds.eduService.mapper;
 import com.xds.eduService.entity.EduSubject;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.xds.eduService.entity.vo.CoursePublishVo;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -12,6 +13,7 @@ import com.xds.eduService.entity.vo.CoursePublishVo;
  * @author testjava
  * @since 2021-08-28
  */
+
 public interface EduSubjectMapper extends BaseMapper<EduSubject> {
 
 

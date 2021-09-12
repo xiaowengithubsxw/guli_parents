@@ -1,13 +1,10 @@
 package com.xds.eduService.controller;
-
-
 import com.xds.commonutils.R;
 import com.xds.eduService.entity.EduChapter;
 import com.xds.eduService.entity.chapter.ChapterVo;
 import com.xds.eduService.service.EduChapterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 /**

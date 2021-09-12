@@ -8,6 +8,7 @@ import com.xds.vod.Utils.ConstantVodUtils;
 import com.xds.vod.Utils.InitVodClient;
 import com.xds.vod.exception.GuliException;
 import com.xds.vod.service.VodService;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -54,6 +55,7 @@ public class VodController {
             throw new GuliException(20001, "删除视频失败");
         }
     }
+
 
 
 
