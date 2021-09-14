@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xds.educlasss.mapper.TeacherMapper">
+<!--    根据教师id查询课程表-->
+    <select id="getAll" resultType="com.xds.educlasss.entity.Fin">
+        SELECT  t.id, t.teachername,c.adress,c.time,c.ttime
+        FROM teacher t LEFT JOIN classs c ON t.id=c.tid
+        WHERE t.id=#{id}
+    </select>
+</mapper>

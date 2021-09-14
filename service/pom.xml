@@ -15,6 +15,7 @@
         <module>service_edu</module>
         <module>service_osss</module>
         <module>service_vod</module>
+        <module>service_class</module>
     </modules>
 
     <dependencies>
