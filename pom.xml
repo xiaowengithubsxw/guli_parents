@@ -2,9 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
     <modules>
         <module>service</module>
         <module>common</module>
+        <module>infrastructure</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -14,10 +16,11 @@
     </parent>
     <groupId>com.xds</groupId>
     <artifactId>guli_parents</artifactId>
-    <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <name>guli_parents</name>
     <description>Demo project for Spring Boot</description>
+
+
     <properties>
         <java.version>1.8</java.version>
         <guli.version>0.0.1-SNAPSHOT</guli.version>
@@ -43,6 +46,7 @@
         <canal.client.version>1.1.0</canal.client.version>
         <docker.image.prefix>zx</docker.image.prefix>
         <cloud-alibaba.version>0.2.2.RELEASE</cloud-alibaba.version>
+        <cloud-version>2020.0.3</cloud-version>
     </properties>
 
     <dependencyManagement>
@@ -50,7 +54,8 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>2020.0.3</version>
+<!--                <version>2020.0.3</version>-->
+                <version>${cloud-version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -201,12 +206,12 @@
 
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
+       <plugins>
+        <plugin>
+               <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-maven-plugin</artifactId>
+        </plugin>
+     </plugins>
     </build>
 
 </project>

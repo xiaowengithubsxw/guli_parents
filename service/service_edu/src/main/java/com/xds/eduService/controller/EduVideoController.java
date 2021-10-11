@@ -3,6 +3,7 @@ package com.xds.eduService.controller;
 
 import com.xds.commonutils.R;
 import com.xds.eduService.client.VodClient;
+import com.xds.eduService.entity.EduChapter;
 import com.xds.eduService.entity.EduVideo;
 import com.xds.eduService.service.EduVideoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,7 @@ public class EduVideoController {
     //注入vodClient
     @Autowired
     private VodClient vodClient;
+
 
     /**
      * 添加小节
@@ -55,6 +57,24 @@ public class EduVideoController {
         //删除小节
         eduVideoService.removeById(id);
         return R.ok();
+    }
+    /**
+     * 编辑小节
+     */
+    @PostMapping("updateVideo")
+    public R updateChapter(@RequestBody EduVideo video){
+        eduVideoService.updateById(video);
+        return R.ok();
+    }
+    /**
+     * 根据id查询小节
+     * @param
+     * @return
+     */
+    @GetMapping("getVideoInfo/{videoId}")
+    public R getChapterInfo(@PathVariable String videoId){
+        EduVideo eduVideo = eduVideoService.getById(videoId);
+        return R.ok().data("eduVideo",eduVideo);
     }
 }
 

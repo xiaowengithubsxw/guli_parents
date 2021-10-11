@@ -42,7 +42,7 @@ public class EduTeacherController {
     public R findAllTeacher(){
          //调用service的方法实现查询所有操作
         List<EduTeacher> list = teacherService.list(null);
-
+        System.out.println("11111");
         return R.ok().data("items",list);
     }
     @DeleteMapping("{id}")
