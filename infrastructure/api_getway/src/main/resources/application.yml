@@ -1,0 +1,26 @@
+# 服务端口
+server:
+  port: 8222
+spring:
+  #  服务名
+  application:
+    name: service-getway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: service-edu
+          uri: lb://service-edu
+          predicates:
+            - Path=/eduService/**
+        - id: service-class
+          uri: lb://service-class
+          predicates:
+            - Path=/educlass/**
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+
